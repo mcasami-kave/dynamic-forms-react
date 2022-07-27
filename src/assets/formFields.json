@@ -58,6 +58,31 @@
                     }
                 ]
             }
+        ],
+        "it": [
+            {
+                "id": "quantity",
+                "label": "Quantity",
+                "placeholder": "Enter Quantity",
+                "type": "number",
+                "validationType": "number",
+                "value": "",
+                "validations": [
+                    {
+                        "type": "min",
+                        "params": [
+                            20,
+                            "Only people over 18 years old"
+                        ]
+                    }
+                ]
+            }
         ]
-    }
+    },
+    "fieldsOrder": [
+        "username",
+        "age",
+        "password",
+        "quantity"
+    ]
 }
