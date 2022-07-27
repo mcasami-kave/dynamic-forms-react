@@ -8,6 +8,8 @@ enum Store {
   ITALIA = 'it'
 }
 
+const queryParams = new URLSearchParams(window.location.search);
+
 const getFormFieldsByStore = (form: FormFields, store: string): Field[] => { 
   return form.custom ? [...form.generic, ...form.custom[store] || []] : [...form.generic];
 };
@@ -24,7 +26,7 @@ const sortFieldsByStore = (fields: Field[], fieldsOrderIds: any): Field[] => {
 }
 
 function App() {
-  const actualStore: Store = Store.KOREA;
+  const actualStore: string = queryParams.get('store');
   const fields: Field[] = getFormFieldsByStore(loginForm, actualStore);
   const fieldsOrderIds: string[] = getFieldsOrderIdsByStore(fields, loginForm.fieldsOrder);
   const sortedFields: Field[] = sortFieldsByStore(fields, fieldsOrderIds);
@@ -33,8 +35,12 @@ function App() {
   
   return (
     <div>
+      <h3>Dynamic Form with Validators</h3>
+      <button style={{marginRight: 15}} onClick={() => window.open(`http://localhost:3000/?store=${Store.SPAIN}`, '_self')}>España</button>
+      <button style={{marginRight: 15}} onClick={() => window.open(`http://localhost:3000/?store=${Store.ITALIA}`, '_self')}>Italia</button>
+      <button onClick={() => window.open(`http://localhost:3000/?store=${Store.KOREA}`, '_self')}>Corea</button>
+
       <DynamicForm {...{fields: sortedFields, onSubmit}}/>
-      <span>Login with google</span>
     </div>
   );
 }
