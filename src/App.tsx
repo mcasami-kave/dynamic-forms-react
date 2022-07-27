@@ -24,7 +24,7 @@ const sortFieldsByStore = (fields: Field[], fieldsOrderIds: any): Field[] => {
 }
 
 function App() {
-  const actualStore: Store = Store.ITALIA;
+  const actualStore: Store = Store.KOREA;
   const fields: Field[] = getFormFieldsByStore(loginForm, actualStore);
   const fieldsOrderIds: string[] = getFieldsOrderIdsByStore(fields, loginForm.fieldsOrder);
   const sortedFields: Field[] = sortFieldsByStore(fields, fieldsOrderIds);
@@ -34,6 +34,7 @@ function App() {
   return (
     <div>
       <DynamicForm {...{fields: sortedFields, onSubmit}}/>
+      <span>Login with google</span>
     </div>
   );
 }

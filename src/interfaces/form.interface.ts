@@ -13,12 +13,12 @@ export interface Field {
     label: string;
     placeholder: string;
     type: string;
-    validationType: string;
     value: string;
     validations: Validation[];
 }
 
 export interface Validation {
     type: string;
-    params: string[];
+    value: boolean | string | number;
+    message: string;
 }

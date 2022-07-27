@@ -5,14 +5,12 @@
             "label": "Username",
             "placeholder": "Enter username",
             "type": "text",
-            "validationType": "string",
             "value": "",
             "validations": [
                 {
                     "type": "required",
-                    "params": [
-                        "Username is required"
-                    ]
+                    "value": true,
+                    "message": "Username is required"
                 }
             ]
         },
@@ -21,14 +19,12 @@
             "label": "Password",
             "placeholder": "Enter password",
             "type": "password",
-            "validationType": "string",
             "value": "",
             "validations": [
                 {
                     "type": "required",
-                    "params": [
-                        "Password is required"
-                    ]
+                    "value": true,
+                    "message": "Password is required"
                 }
             ]
         }
@@ -40,40 +36,38 @@
                 "label": "Age",
                 "placeholder": "Enter Age",
                 "type": "text",
-                "validationType": "string",
                 "value": "",
                 "validations": [
                     {
                         "type": "required",
-                        "params": [
-                            "Birth Day is required"
-                        ]
+                        "value": true,
+                        "message": "Password is required"
                     },
                     {
                         "type": "min",
-                        "params": [
-                            18,
-                            "Only people over 18 years old"
-                        ]
+                        "value": 18,
+                        "message": "Only people over 18 years old"
+                    },
+                    {
+                        "type": "max",
+                        "value": 99,
+                        "message": "Only people under 99 years old"
                     }
                 ]
             }
         ],
         "it": [
             {
-                "id": "quantity",
-                "label": "Quantity",
-                "placeholder": "Enter Quantity",
-                "type": "number",
-                "validationType": "number",
+                "id": "city",
+                "label": "City",
+                "placeholder": "Enter City",
+                "type": "text",
                 "value": "",
                 "validations": [
                     {
                         "type": "min",
-                        "params": [
-                            20,
-                            "Only people over 18 years old"
-                        ]
+                        "value": 2,
+                        "message": "More one char"
                     }
                 ]
             }
@@ -83,6 +77,6 @@
         "username",
         "age",
         "password",
-        "quantity"
+        "city"
     ]
 }
