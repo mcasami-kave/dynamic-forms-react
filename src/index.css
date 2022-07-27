@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.errValidator {
+  color: red;
+  font-size: 12px;
+}
+
+.field {
+  padding: 3px 0;
+}

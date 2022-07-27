@@ -26,10 +26,10 @@ const getReactHookFormValidators = (validations: Validation[]): RHFValidator => 
 function FormField({ field, register, errors }: FormFieldProps): JSX.Element {
     const {id, label, placeholder, type, value, validations} = field;
     const validators: RHFValidator = getReactHookFormValidators(validations);
-    return <div style={{paddingTop: 5}}>
+    return <div className="field" style={{paddingTop: 5}}>
         <label htmlFor={id} style={{paddingRight: 20}}>{label}:</label>
         <input type={type} id={id} name={id} placeholder={placeholder} {...register(id, validators)}></input><br />
-        {errors[id] && <span>{errors[id].message}</span>}
+        {errors[id] && <span className="errValidator">{errors[id].message}</span>}
     </div>;
 }
 
