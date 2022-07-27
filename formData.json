@@ -1,0 +1,63 @@
+{
+    "generic": [
+        {
+            "id": "username",
+            "label": "Username",
+            "placeholder": "Enter username",
+            "type": "text",
+            "validationType": "string",
+            "value": "",
+            "validations": [
+                {
+                    "type": "required",
+                    "params": [
+                        "Username is required"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "password",
+            "label": "Password",
+            "placeholder": "Enter password",
+            "type": "password",
+            "validationType": "string",
+            "value": "",
+            "validations": [
+                {
+                    "type": "required",
+                    "params": [
+                        "Password is required"
+                    ]
+                }
+            ]
+        }
+    ],
+    "custom": {
+        "kr": [
+            {
+                "id": "age",
+                "label": "Age",
+                "placeholder": "Enter Age",
+                "type": "text",
+                "validationType": "string",
+                "value": "",
+                "validations": [
+                    {
+                        "type": "required",
+                        "params": [
+                            "Birth Day is required"
+                        ]
+                    },
+                    {
+                        "type": "min",
+                        "params": [
+                            18,
+                            "Only people over 18 years old"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

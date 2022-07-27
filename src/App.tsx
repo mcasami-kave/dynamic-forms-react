@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import DynamicForm from './components/DynamicForm';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-       <h1>dynamic-forms-react</h1>
+      <DynamicForm />
       </header>
     </div>
   );
