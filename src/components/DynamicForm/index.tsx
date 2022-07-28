@@ -41,7 +41,7 @@ interface DynamicFormProps {
 function DynamicForm({ fields, onSubmit}: DynamicFormProps) : JSX.Element {
     const { handleSubmit, register, formState: { errors } } = useForm();
     return (
-        <form onSubmit={handleSubmit(onSubmit)} style={{marginTop: 15}}>
+        <form onSubmit={handleSubmit(onSubmit)} style={{marginTop: 15, marginBottom: 15}}>
             {
                fields.map((field: Field) => <FormField key={field.id} {...{field, register, errors }} />) 
             }

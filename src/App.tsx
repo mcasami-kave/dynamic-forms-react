@@ -1,6 +1,7 @@
 import DynamicForm from './components/DynamicForm';
 import loginForm from './assets/formFields.json'
 import { Field, FormFields } from './interfaces/form.interface';
+import { useState } from 'react';
 
 enum Store {
   SPAIN = 'es',
@@ -31,7 +32,12 @@ function App() {
   const fieldsOrderIds: string[] = getFieldsOrderIdsByStore(fields, loginForm.fieldsOrder);
   const sortedFields: Field[] = sortFieldsByStore(fields, fieldsOrderIds);
 
-  const onSubmit = (value: any) => console.log(value);
+  const [formVal, setFromVal] = useState({});
+
+  const onSubmit = (value: any): void => {
+    console.log(value);
+    setFromVal(value);
+  }
   
   return (
     <div>
@@ -41,6 +47,8 @@ function App() {
       <button onClick={() => window.open(`http://localhost:3000/?store=${Store.KOREA}`, '_self')}>Corea</button>
 
       <DynamicForm {...{fields: sortedFields, onSubmit}}/>
+
+      {JSON.stringify(formVal) !== '{}' && <span className='result'>{JSON.stringify(formVal)}</span>}
     </div>
   );
 }

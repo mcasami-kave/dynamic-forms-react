@@ -20,3 +20,8 @@ code {
 .field {
   padding: 3px 0;
 }
+
+.result {
+  font-weight: bold;
+  font-size: 12px;
+}
