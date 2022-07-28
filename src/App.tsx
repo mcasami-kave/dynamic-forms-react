@@ -42,9 +42,9 @@ function App() {
   return (
     <div>
       <h3>Dynamic Form with Validators</h3>
-      <button style={{marginRight: 15}} onClick={() => window.open(`http://localhost:3000/?store=${Store.SPAIN}`, '_self')}>España</button>
-      <button style={{marginRight: 15}} onClick={() => window.open(`http://localhost:3000/?store=${Store.ITALIA}`, '_self')}>Italia</button>
-      <button onClick={() => window.open(`http://localhost:3000/?store=${Store.KOREA}`, '_self')}>Corea</button>
+      <button style={{marginRight: 15}} onClick={() => window.open(`./?store=${Store.SPAIN}`, '_self')}>España</button>
+      <button style={{marginRight: 15}} onClick={() => window.open(`./?store=${Store.ITALIA}`, '_self')}>Italia</button>
+      <button onClick={() => window.open(`./?store=${Store.KOREA}`, '_self')}>Corea</button>
 
       <DynamicForm {...{fields: sortedFields, onSubmit}}/>
 
