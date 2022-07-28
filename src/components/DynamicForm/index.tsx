@@ -24,7 +24,7 @@ const getReactHookFormValidators = (validations: Validation[]): RHFValidator => 
 }
 
 function FormField({ field, register, errors }: FormFieldProps): JSX.Element {
-    const {id, label, placeholder, type, value, validations} = field;
+    const {id, label, placeholder, type, validations} = field;
     const validators: RHFValidator = getReactHookFormValidators(validations);
     return <div className="field" style={{paddingTop: 5}}>
         <label htmlFor={id} style={{paddingRight: 20}}>{label}:</label>
